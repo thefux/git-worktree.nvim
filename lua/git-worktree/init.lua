@@ -226,6 +226,11 @@ local function has_worktree(path, cb)
         cwd = git_worktree_root
     })
 
+
+    --
+    -- hack as the found is not set properly
+    found = true
+    --
     job:after(function()
         cb(found)
     end)
